@@ -8,9 +8,9 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 from clean_text import clean_text
 
 # Load model and vectorizer
-model = joblib.load('../models/fake_news_model.pkl')
-vectorizer = joblib.load('../models/tfidf_vectorizer.pkl')
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = joblib.load(os.path.join(BASE_DIR, '..', 'models', 'fake_news_model.pkl'))
+vectorizer = joblib.load(os.path.join(BASE_DIR, '..', 'models', 'tfidf_vectorizer.pkl'))
 st.set_page_config(page_title="Fake News Analyser", page_icon="📰", layout="wide")
 
 # --- Custom styling ---
